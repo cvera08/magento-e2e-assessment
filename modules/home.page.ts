@@ -1,4 +1,12 @@
 import { Page } from "@playwright/test";
 
 
-export const searchWithDuckDuckGoDDL = (page: Page) => page.getByRole('combobox', { name: 'Search with DuckDuckGo' })
+const searchInput = (page: Page) => page.getByRole('combobox', { name: 'Search with DuckDuckGo' });
+
+const searchBtn = (page: Page) => page.getByRole('button', { name: 'Search', exact: true });
+
+export const searchWithDuckDuckGo = async (page: Page, term: string) => {
+    await searchInput(page).click();
+    await searchInput(page).fill(term);
+    await searchBtn(page).click();
+}
