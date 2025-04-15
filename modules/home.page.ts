@@ -8,5 +8,6 @@ const searchBtn = (page: Page) => page.getByRole('button', { name: 'Search', exa
 export const searchWithDuckDuckGo = async (page: Page, term: string) => {
     await searchInput(page).click();
     await searchInput(page).fill(term);
-    await searchBtn(page).click();
+    
+    await searchBtn(page).press('Enter');  // 🐞 Using 'press("Enter")' instead of 'click()' avoids false negatives in headless mode
 };
