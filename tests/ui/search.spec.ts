@@ -6,5 +6,5 @@ test('Test Case 1 - search android', async ({ page }) => {
 
     // TODO [cvera]: Codegen selectors – replace with reusable Page Object methods
     await searchPage.searchWithDuckDuckGo(page, 'android');
-    await page.getByRole('link', { name: 'Android | Do More With Google' }).click();
+    await expect(page.getByTestId('result-title-a').first()).toContainText('Android'); // TODO [cvera]: validate all results, not just "at least one" / "first one"
 });
