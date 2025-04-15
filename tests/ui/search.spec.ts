@@ -1,6 +1,6 @@
-import { test, expect } from '@playwright/test'
-import * as searchPage from '../../modules/home.page'
-import { assertAllResultsContain } from '../../modules/search-results.page'
+import { test, expect } from '@playwright/test';
+import * as searchPage from '../../modules/home.page';
+import { assertAllResultsContain } from '../../modules/search-results.page';
 
 test('Test Case 1 - search android', async ({ page }) => {   
     const searchTerm = 'android';

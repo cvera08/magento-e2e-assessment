@@ -9,4 +9,4 @@ export const searchWithDuckDuckGo = async (page: Page, term: string) => {
     await searchInput(page).click();
     await searchInput(page).fill(term);
     await searchBtn(page).click();
-}
+};
