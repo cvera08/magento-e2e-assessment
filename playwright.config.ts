@@ -35,17 +35,25 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'API',
+      testMatch: /.*\/tests\/api\/.*\.spec\.ts/,
+      use: {} // No browser needed
+    },
+    {
       name: 'chromium',
+      testIgnore: /.*\/tests\/api\/.*\.spec\.ts/,
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
       name: 'firefox',
+      testIgnore: /.*\/tests\/api\/.*\.spec\.ts/,
       use: { ...devices['Desktop Firefox'] },
     },
 
     {
       name: 'webkit',
+      testIgnore: /.*\/tests\/api\/.*\.spec\.ts/,
       use: { ...devices['Desktop Safari'] },
     },
 
