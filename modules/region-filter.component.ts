@@ -18,6 +18,8 @@ const regionOptionsModal = (page: Page): Locator =>
         has: page.locator('input[placeholder="Search"]')
     });
 
+// TODO [cvera]: Replace this fragile class-based selector with a more stable data-testid.
+// Suggest adding a dedicated data-testid to region option items in collaboration with frontend devs.
 const regionOptionItems = (page: Page): Locator =>
     regionOptionsModal(page).locator('[class*="BDI1KtNF8HUPBZ4Cw_nK"]');
 
