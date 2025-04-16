@@ -92,10 +92,8 @@ This project is GitHub Actions ready. On every push or PR:
 - ✅ Run API tests (headless)
 - ✅ Generate HTML + JUnit reports
 
-You can find the workflow under:
-```bash
-.github/workflows/playwright.yml
-```
+You can find the workflow under:  
+- [`.github/workflows/playwright.yml`](.github/workflows/playwright.yml)
 
 ---
 
