@@ -116,6 +116,16 @@ You can find the workflow under:
 
 ---
 
+## 🧭 Next Steps (Ideas)
+
+- [ ] Add negative or edge test scenarios (e.g., empty search)
+- [ ] Add `data-testid` to region options (collaboration with frontend devs)
+- [ ] Parameterize test data with `test.describe.each`
+- [ ] Enable screenshot or video capture for flaky tests
+- [ ] Add Changelog section if project continues to evolve
+
+---
+
 ## 👨‍💻 Author
 
 Carlos Vera – [LinkedIn](https://www.linkedin.com/in/carlos-vera-automation-qa/) · [GitHub](https://github.com/cvera08)
@@ -125,16 +135,6 @@ Carlos Vera – [LinkedIn](https://www.linkedin.com/in/carlos-vera-automation-qa
 ## 📄 License
 
 This project is licensed under the **ISC License**.
-
----
-
-## 🧭 Next Steps (Ideas)
-
-- [ ] Add negative or edge test scenarios (e.g., empty search)
-- [ ] Add `data-testid` to region options (collaboration with frontend devs)
-- [ ] Parameterize test data with `test.describe.each`
-- [ ] Enable screenshot or video capture for flaky tests
-- [ ] Add Changelog section if project continues to evolve
 
 ---
 
