@@ -13,6 +13,4 @@ test('Test Case 2 - validate region options > 10', async ({ page }) => {
     await regionFilter.openRegionModal(page);
     const count = await regionFilter.getRegionOptionCount(page);
     expect(count).toBeGreaterThan(10);
-
-    await page.waitForTimeout(5000) //only for demo recording!
 });
