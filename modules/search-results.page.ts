@@ -1,7 +1,10 @@
+/**
+ * Search Results Page module — provides helpers to validate content returned from a search action.
+ */
 
-import { Page, expect } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
-const resultsTitle = (page: Page) => page.getByTestId('result-title-a');
+const resultsTitle = (page: Page): Locator => page.getByTestId('result-title-a');
 
 /**
  * Validates that all result titles from the DuckDuckGo search results
@@ -14,7 +17,7 @@ const resultsTitle = (page: Page) => page.getByTestId('result-title-a');
  * await assertAllResultsContain(page, 'android');
  * await assertAllResultsContain(page, 'Android');
  */
-export const assertAllResultsContain = async (page: Page, search: string) => {
+export const assertAllResultsContain = async (page: Page, search: string): Promise<void> => {
     const results = resultsTitle(page);
     await expect(results.first()).toBeVisible(); // 🐞 Avoid racing the UI: make sure at least one result is visible before asserting
 
