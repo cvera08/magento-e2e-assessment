@@ -73,6 +73,25 @@ npm run report
 
 ---
 
+## 🎥 Demo
+
+> Click the thumbnail below to watch the video walkthrough _(opens in a new tab)_:
+
+<a href="https://github.com/user-attachments/assets/5a423e3a-5d9a-4e82-9ba1-33e7ec6fd447" target="_blank">
+  <img src="https://i.ibb.co/LD6PdzNj/Play-demo-thumbnail.png"
+       alt="Watch the Demo"
+       width="480" />
+</a>
+
+*Shows the test running in headed mode:*
+- Navigates to DuckDuckGo
+- Searches for “android”
+- Opens “All regions” dropdown
+- Logs API Icon URLs
+- Final pass status in Playwright Report
+
+---
+
 ## 🛠️ Tech Stack
 
 - [Playwright](https://playwright.dev/) + [TypeScript](https://www.typescriptlang.org/)
