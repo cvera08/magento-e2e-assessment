@@ -1,3 +1,6 @@
+/**
+ * Search Results Page module — provides helpers to validate content returned from a search action.
+ */
 
 import { Page, expect } from '@playwright/test';
 
