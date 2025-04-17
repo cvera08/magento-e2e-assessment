@@ -42,9 +42,9 @@ Automated end-to-end test suite for Magento using [Playwright](https://playwrigh
 
 | Test Case | Description |
 |-----------|-------------|
-| 1 | Verify that the Orders and Returns form is accessible |
-| 2 | Validate that the form fields work as expected |
-| 3 | Ensure that submitting the form triggers the expected behavior |
+| 1 | **Verify form accessibility**: Ensures that the Orders and Returns form is visible and all key fields are accessible. |
+| 2 | **Validate form fields**: Ensures that the required fields (Order ID, Last Name, Email) are filled and work as expected. |
+| 3 | **Submit form and check behavior**: Ensures that after submitting the form, the user is redirected to the order view page, and the order title is visible. |
 
 ---
 
@@ -73,8 +73,8 @@ npm run report
 
 > Click the thumbnail below to watch the video walkthrough _(opens in a new tab)_:
 
-<a href="https://github.com/user-attachments/assets/5a423e3a-5d9a-4e82-9ba1-33e7ec6fd447" target="_blank">
-  <img src="https://i.ibb.co/LD6PdzNj/Play-demo-thumbnail.png"
+<a href="https://github.com/user-attachments/assets/c820f1e8-ada6-4fc2-b573-a12a08d65388" target="_blank">
+  <img src="https://i.ibb.co/RT2YSdkP/magento-thumbnail.png"
        alt="Watch the Demo"
        width="480" />
 </a>
@@ -118,6 +118,7 @@ You can find the workflow under:
 - [ ] Parameterize test data with `test.describe.each`
 - [ ] Enable screenshot or video capture for flaky tests
 - [ ] Add Changelog section if project continues to evolve
+- [ ] Add Contribution Guidelines (forking, submitting PRs, etc.)
 
 ---
 
@@ -131,4 +132,4 @@ Carlos Vera – [LinkedIn](https://www.linkedin.com/in/carlos-vera-automation-qa
 
 This project is licensed under the **ISC License**.
 
----
+For more information, refer to the [ISC License Documentation](https://opensource.org/licenses/ISC).
