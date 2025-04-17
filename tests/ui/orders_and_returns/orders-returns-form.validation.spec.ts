@@ -41,3 +41,28 @@ test('Test Case 2B - Negative Path: validate error messages when mandatory field
 
     await expect(ordersReturnsFormPage.emailError(page)).toBeVisible(); // Verify error for Email field
 });
+
+/**
+ * Orders and Returns Form — iterative validation for mandatory fields.
+ */
+test('Test Case 2C - Iterative Validation: fill each mandatory field one by one and validate errors for the others', async ({ page }) => {
+    await page.goto('/sales/guest/form/', { waitUntil: 'load' });
+
+    // 1. Fill in the Order ID field and submit (check errors for Last Name and Email)
+    const orderIdField = await ordersReturnsFormPage.ordersReturnsForm(page).locator('input#oar-order-id');
+    await orderIdField.fill('12345');
+    const continueButton = await ordersReturnsFormPage.ordersReturnsForm(page).locator('button.action.submit.primary');
+    await continueButton.click();
+    const lastNameError = await page.locator('div#oar-billing-lastname-error');
+    await expect(lastNameError).toBeVisible(); // Error for Last Name
+    const emailError = await page.locator('div#oar_email-error');
+    await expect(emailError).toBeVisible(); // Error for Email
+
+    // 2. Fill in the Billing Last Name field and submit (check error for Email)
+    const lastNameField = await ordersReturnsFormPage.ordersReturnsForm(page).locator('input#oar-billing-lastname');
+    await lastNameField.fill('Doe');
+    await continueButton.click();
+    const emailErrorAfterLastName = await page.locator('div#oar_email-error');
+    await expect(emailErrorAfterLastName).toBeVisible(); // Error for Email
+});
+
