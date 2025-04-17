@@ -101,3 +101,15 @@ export const lastNameField = (page: Page): Locator =>
  */
 export const findOrderSelect = (page: Page): Locator =>
     ordersReturnsForm(page).locator('select#quick-search-type-id');
+
+/**
+ * Navigate to the Orders and Returns form page and wait for it to be fully loaded.
+ * This function will be reused across tests to reduce duplication.
+ * 
+ * @param {Page} page - The Playwright Page object to interact with.
+ */
+export const navigateToOrdersReturnsForm = async (page: Page): Promise<void> => {
+    await page.goto('/sales/guest/form/', { waitUntil: 'load' });
+    await page.waitForTimeout(1000); // Wait for 1 second to ensure the page has fully loaded (otherwise Random False Failures in CICD) // TODO [cvera]: Replace with a more reliable wait, such as waitForSelector, or response.status() === 200, to ensure the page is fully loaded
+
+};

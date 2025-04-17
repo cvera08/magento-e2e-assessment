@@ -17,7 +17,7 @@ const orderData = {
  * This test ensures that the user can fill the form fields correctly and submit them.
  */
 test('Test Case 2A - Happy Path: validate that the form fields work as expected 🧪', async ({ page }) => {
-    await page.goto('/sales/guest/form/', { waitUntil: 'load' });
+    await ordersReturnsFormPage.navigateToOrdersReturnsForm(page);
 
     // Fill in the Order ID field and verify it's filled correctly
     const orderIdField = await ordersReturnsFormPage.orderIdField(page);
@@ -45,7 +45,7 @@ test('Test Case 2A - Happy Path: validate that the form fields work as expected 
  * This test ensures that the form displays appropriate error messages when mandatory fields are left empty.
  */
 test('Test Case 2B - Negative Path: validate error messages when mandatory fields are not filled 🧪', async ({ page }) => {
-    await page.goto('/sales/guest/form/', { waitUntil: 'load' });
+    await ordersReturnsFormPage.navigateToOrdersReturnsForm(page);
 
     // Try to submit the form without filling the required fields
     await ordersReturnsFormPage.continueButton(page).click();
@@ -61,7 +61,7 @@ test('Test Case 2B - Negative Path: validate error messages when mandatory field
  * This test iteratively fills each mandatory field one by one and validates errors for the other fields.
  */
 test('Test Case 2C - Iterative Validation: fill each mandatory field one by one and validate errors for the others 🧪', async ({ page }) => {
-    await page.goto('/sales/guest/form/', { waitUntil: 'load' });
+    await ordersReturnsFormPage.navigateToOrdersReturnsForm(page);
 
     // 1. Fill in the Order ID field and submit (check errors for Last Name and Email)
     await ordersReturnsFormPage.orderIdField(page).fill(orderData.orderId);
