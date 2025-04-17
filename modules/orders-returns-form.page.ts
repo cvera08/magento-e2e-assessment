@@ -14,3 +14,7 @@ export const orderIdError = (page: Page): Locator => page.locator('div#oar-order
 export const lastNameError = (page: Page): Locator => page.locator('div#oar-billing-lastname-error');
 
 export const emailError = (page: Page): Locator => page.locator('div#oar_email-error');
+
+export const orderIdField = (page: Page): Locator => page.locator('input#oar-order-id');
+
+export const lastNameField = (page: Page): Locator => page.locator('input#oar-billing-lastname');
