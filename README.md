@@ -48,6 +48,28 @@ Automated end-to-end test suite for Magento using [Playwright](https://playwrigh
 
 ---
 
+## 🛠️ Installation
+
+To get started with this project, please follow the steps below to set up the environment:
+
+1. **Install Node.js**:
+   - Download and install [Node.js](https://nodejs.org/). This project uses the LTS (Long Term Support) version.
+   
+2. **Install Visual Studio Code** (optional but recommended for editing):
+   - Download [Visual Studio Code](https://code.visualstudio.com/).
+
+3. **Install project dependencies**:
+   - Once you have Node.js installed, run the following command to install the necessary dependencies:
+
+   ```bash
+   npm ci
+   ```
+
+4. **Verify your installation**:
+   - To make sure everything is set up correctly, you can run the Playwright tests after installing the dependencies (see below).
+
+---
+
 ## 🧪 Run Tests
 
 ```bash
