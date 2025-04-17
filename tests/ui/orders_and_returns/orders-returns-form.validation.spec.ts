@@ -5,6 +5,13 @@ import * as ordersReturnsFormPage from '../../../modules/orders-returns-form.pag
  * Orders and Returns Form — field validation (Happy and Negative Path).
  */
 
+// Global order data for the tests
+const orderData = {
+    orderId: '000050375',
+    lastName: '86909',
+    email: 'roral86909@cotigz.com'
+};
+
 /**
  * Test Case 2A - Happy Path: Validate that the form fields work as expected.
  * This test ensures that the user can fill the form fields correctly and submit them.
@@ -14,18 +21,18 @@ test('Test Case 2A - Happy Path: validate that the form fields work as expected 
 
     // Fill in the Order ID field and verify it's filled correctly
     const orderIdField = await ordersReturnsFormPage.orderIdField(page);
-    await orderIdField.fill('12345');
-    await expect(orderIdField).toHaveValue('12345'); // Ensure the value is filled correctly
+    await orderIdField.fill(orderData.orderId);
+    await expect(orderIdField).toHaveValue(orderData.orderId); // Ensure the value is filled correctly
 
     // Fill in the Billing Last Name field and verify it's filled correctly
     const lastNameField = await ordersReturnsFormPage.lastNameField(page);
-    await lastNameField.fill('Doe');
-    await expect(lastNameField).toHaveValue('Doe');
+    await lastNameField.fill(orderData.lastName);
+    await expect(lastNameField).toHaveValue(orderData.lastName); // Ensure the value is filled correctly
 
     // Fill in the Email field and verify it's filled correctly
     const emailField = await ordersReturnsFormPage.emailInput(page);
-    await emailField.fill('test@example.com');
-    await expect(emailField).toHaveValue('test@example.com');
+    await emailField.fill(orderData.email);
+    await expect(emailField).toHaveValue(orderData.email); // Ensure the value is filled correctly
 
     // Select "Email" from the "Find Order By" dropdown and verify selection
     const findOrderSelect = await ordersReturnsFormPage.findOrderSelect(page);
@@ -57,13 +64,14 @@ test('Test Case 2C - Iterative Validation: fill each mandatory field one by one 
     await page.goto('/sales/guest/form/', { waitUntil: 'load' });
 
     // 1. Fill in the Order ID field and submit (check errors for Last Name and Email)
-    await ordersReturnsFormPage.orderIdField(page).fill('12345');
-    await ordersReturnsFormPage.continueButton(page).click();
+    await ordersReturnsFormPage.orderIdField(page).fill(orderData.orderId);
+    const continueButton = await ordersReturnsFormPage.continueButton(page);
+    await continueButton.click();
     await expect(ordersReturnsFormPage.lastNameError(page)).toBeVisible(); // Error for missing Last Name
     await expect(ordersReturnsFormPage.emailError(page)).toBeVisible(); // Error for missing Email
 
     // 2. Fill in the Billing Last Name field and submit (check error for Email)
-    await ordersReturnsFormPage.lastNameField(page).fill('Doe');
-    await ordersReturnsFormPage.continueButton(page).click();
+    await ordersReturnsFormPage.lastNameField(page).fill(orderData.lastName);
+    await continueButton.click();
     await expect(ordersReturnsFormPage.emailError(page)).toBeVisible(); // Error for missing Email
 });
