@@ -28,7 +28,7 @@ test('Test Case 2A - Happy Path: validate that the form fields work as expected 
     await expect(emailField).toHaveValue('test@example.com');
 
     // Select "Email" from the "Find Order By" dropdown and verify selection
-    const findOrderSelect = await ordersReturnsFormPage.ordersReturnsForm(page).locator('select#quick-search-type-id');
+    const findOrderSelect = await ordersReturnsFormPage.findOrderSelect(page);
     await findOrderSelect.selectOption({ label: 'Email' });
     await expect(findOrderSelect).toHaveValue('email');
 });
