@@ -1,23 +1,25 @@
 {
-  "name": "duckduckgo-e2e-assessment",
+  "name": "magento-e2e-assessment",
   "version": "1.0.0",
-  "description": "End-to-end testing suite for DuckDuckGo assessment using Playwright",
-  "main": "index.js",
+  "description": "End-to-end testing suite for Magento assessment using Playwright",
   "scripts": {
     "test": "npx playwright test",
     "test:ui": "npx playwright test tests/ui",
     "test:api": "npx playwright test --project=API",
     "test:chrome": "npx playwright test --project=chromium",
     "test:chrome:headed": "npx playwright test --project=chromium --headed",
+    "test:all": "npx playwright test tests/ui && npx playwright test --project=API",
     "report": "npx playwright show-report",
-    "codegen": "npx playwright codegen https://start.duckduckgo.com/"
+    "codegen": "npx playwright codegen https://magento.softwaretestingboard.com/"
   },
   "keywords": [
     "playwright",
     "e2e",
     "testing",
-    "duckduckgo",
-    "typescript"
+    "magento",
+    "typescript",
+    "automation",
+    "test-automation"
   ],
   "author": "C Vera",
   "license": "ISC",
