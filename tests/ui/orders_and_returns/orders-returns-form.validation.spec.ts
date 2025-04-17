@@ -33,15 +33,11 @@ test('Test Case 2B - Negative Path: validate error messages when mandatory field
     await page.goto('/sales/guest/form/', { waitUntil: 'load' });
 
     // Try to submit the form without filling the required fields
-    const continueButton = await ordersReturnsFormPage.ordersReturnsForm(page).locator('button.action.submit.primary');
-    await continueButton.click();
+    await ordersReturnsFormPage.continueButton(page).click();
 
-    const orderIdError = await page.locator('div#oar-order-id-error');
-    await expect(orderIdError).toBeVisible(); // Check if an error message appears for the required "Order ID" field
+    await expect(ordersReturnsFormPage.orderIdError(page)).toBeVisible(); // Check if an error message appears for the required "Order ID" field
 
-    const lastNameError = await page.locator('div#oar-billing-lastname-error');
-    await expect(lastNameError).toBeVisible(); // Verify error for Last Name field
+    await expect(ordersReturnsFormPage.lastNameError(page)).toBeVisible(); // Verify error for Last Name field
 
-    const emailError = await page.locator('div#oar_email-error');
-    await expect(emailError).toBeVisible(); // Verify error for Email field
+    await expect(ordersReturnsFormPage.emailError(page)).toBeVisible(); // Verify error for Email field
 });
