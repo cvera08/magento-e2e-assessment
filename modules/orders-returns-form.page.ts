@@ -37,7 +37,7 @@ export const ordersReturnsForm = (page: Page): Locator =>
  * @returns {Locator} - The locator for the Email input field.
  */
 export const emailInput = (page: Page): Locator =>
-    page.locator('input#oar_email');
+    ordersReturnsForm(page).locator('input#oar_email');
 
 /**
  * Retrieves the locator for the "Continue" button in the Orders and Returns form.
@@ -55,7 +55,7 @@ export const continueButton = (page: Page): Locator =>
  * @returns {Locator} - The locator for the "Order ID" error message.
  */
 export const orderIdError = (page: Page): Locator => 
-    page.locator('div#oar-order-id-error');
+    ordersReturnsForm(page).locator('div#oar-order-id-error');
 
 /**
  * Retrieves the locator for the error message of the "Last Name" field.
@@ -64,7 +64,7 @@ export const orderIdError = (page: Page): Locator =>
  * @returns {Locator} - The locator for the "Last Name" error message.
  */
 export const lastNameError = (page: Page): Locator => 
-    page.locator('div#oar-billing-lastname-error');
+    ordersReturnsForm(page).locator('div#oar-billing-lastname-error');
 
 /**
  * Retrieves the locator for the error message of the "Email" field.
@@ -73,7 +73,7 @@ export const lastNameError = (page: Page): Locator =>
  * @returns {Locator} - The locator for the "Email" error message.
  */
 export const emailError = (page: Page): Locator => 
-    page.locator('div#oar_email-error');
+    ordersReturnsForm(page).locator('div#oar_email-error');
 
 /**
  * Retrieves the locator for the "Order ID" input field in the Orders and Returns form.
@@ -82,7 +82,7 @@ export const emailError = (page: Page): Locator =>
  * @returns {Locator} - The locator for the "Order ID" input field.
  */
 export const orderIdField = (page: Page): Locator => 
-    page.locator('input#oar-order-id');
+    ordersReturnsForm(page).locator('input#oar-order-id');
 
 /**
  * Retrieves the locator for the "Last Name" input field in the Orders and Returns form.
@@ -91,4 +91,13 @@ export const orderIdField = (page: Page): Locator =>
  * @returns {Locator} - The locator for the "Last Name" input field.
  */
 export const lastNameField = (page: Page): Locator => 
-    page.locator('input#oar-billing-lastname');
+    ordersReturnsForm(page).locator('input#oar-billing-lastname');
+
+/**
+ * Retrieves the locator for the "Find Order By" dropdown in the Orders and Returns form.
+ *
+ * @param {Page} page - The Playwright Page object to interact with.
+ * @returns {Locator} - The locator for the "Find Order By" select dropdown.
+ */
+export const findOrderSelect = (page: Page): Locator =>
+    ordersReturnsForm(page).locator('select#quick-search-type-id');
